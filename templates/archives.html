@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{%endblock%}
+
+{% block content %}
+<div id="content">
+
+  {% for category, articles in categories %}
+    <h3 class="title is-3">{{ category }}</h3>
+    <table class="table">
+    {% for article in articles %}
+      <tr>
+          <td>{{ article.locale_date|upper }}</td>
+          <td><span class="title is-6"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></span></td>
+          <td><span class="subtitle is-6">{{ article.tags|format_tags }}</span></td>
+      </tr>
+    {% endfor %}
+    </table>
+    <hr />
+
+  {% endfor %}
+
+</div><!-- /#content -->
+{% endblock content %}

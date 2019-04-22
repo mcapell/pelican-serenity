@@ -1,0 +1,32 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #00d1b2;
+}
+
+.main-content {
+  min-height: calc(100vh - 13rem);
+}
+
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+hr.slim {
+  margin: 0px;
+}
+
+.code {
+  width: 90%;
+}
+
+.title.clear {
+  line-height: 2rem;
+}
