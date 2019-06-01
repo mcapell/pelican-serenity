@@ -12,7 +12,13 @@
       <tr>
           <td>{{ article.locale_date|upper }}</td>
           <td><span class="title is-6"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></span></td>
-          <td><span class="subtitle is-6">{{ article.tags|format_tags }}</span></td>
+          <td>
+            <span class="subtitle is-6">
+              {% for tag in article.tags %}
+                  <a href="/tag/{{ tag }}">{{ tag|upper }}</a>{{ "," if not loop.last }}
+              {% endfor %}
+            </span>
+          </td>
       </tr>
     {% endfor %}
     </table>

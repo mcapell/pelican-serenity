@@ -11,7 +11,11 @@
         <p class="title clear is-4"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></p>
         <p class="subtitle is-6">
           <span>{{ article.locale_date|upper }}</span> |
-          <span>{{ article.tags|format_tags }}</span>
+          <span>
+            {% for tag in article.tags %}
+                <a href="/tag/{{ tag }}">{{ tag|upper }}</a>{{ "," if not loop.last }}
+            {% endfor %}
+          </span>
         </p>
         <div>
           <p>{{ article.summary }}</p>
